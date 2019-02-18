@@ -16,6 +16,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
+//Mapeando os objetos no banco usando anotaçoes
 
 @Entity
 @Table(name = "TB_ZOOLOGICO")
@@ -28,7 +29,7 @@ public class Zoologico {
 	private int codigo;
 	
 	@Column(name = "NM_ANIMAL", nullable = false, length = 20)
-	private int nome;
+	private String nome;
 	
 	@Column(name = "QT_ANIMAIS", nullable = false)
 	private int quantidadeAnimais;
@@ -47,7 +48,7 @@ public class Zoologico {
 
 	@Column(name = "DT_INALGURACAO", nullable = false)
 	@Temporal(TemporalType.DATE)
-	private Date dataInalguracao;
+	private Calendar dataInalguracao;
 
 	@Column(name = "ST_EMERGENCIA", nullable = false)
 	private boolean emergencia;
@@ -63,8 +64,8 @@ public class Zoologico {
 		super();
 	}
 
-	public Zoologico(int nome, int quantidadeAnimais, Tipo tipoAnimal, Date horaAbertura, Date horaFechamento,
-			Date dataInalguracao, boolean emergencia, byte[] logo) {
+	public Zoologico(String nome, int quantidadeAnimais, Tipo tipoAnimal, Date horaAbertura, Date horaFechamento,
+			Calendar dataInalguracao, boolean emergencia, byte[] logo) {
 		super();
 		this.nome = nome;
 		this.quantidadeAnimais = quantidadeAnimais;
@@ -76,8 +77,8 @@ public class Zoologico {
 		this.logo = logo;
 	}
 
-	public Zoologico(int codigo, int nome, int quantidadeAnimais, Tipo tipoAnimal, Date horaAbertura,
-			Date horaFechamento, Date dataInalguracao, boolean emergencia, byte[] logo) {
+	public Zoologico(int codigo, String nome, int quantidadeAnimais, Tipo tipoAnimal, Date horaAbertura,
+			Date horaFechamento, Calendar dataInalguracao, boolean emergencia, byte[] logo) {
 		super();
 		this.codigo = codigo;
 		this.nome = nome;
@@ -98,11 +99,11 @@ public class Zoologico {
 		this.codigo = codigo;
 	}
 
-	public int getNome() {
+	public String getNome() {
 		return nome;
 	}
 
-	public void setNome(int nome) {
+	public void setNome(String nome) {
 		this.nome = nome;
 	}
 
@@ -138,11 +139,11 @@ public class Zoologico {
 		this.horaFechamento = horaFechamento;
 	}
 
-	public Date getDataInalguracao() {
+	public Calendar getDataInalguracao() {
 		return dataInalguracao;
 	}
 
-	public void setDataInalguracao(Date dataInalguracao) {
+	public void setDataInalguracao(Calendar dataInalguracao) {
 		this.dataInalguracao = dataInalguracao;
 	}
 
