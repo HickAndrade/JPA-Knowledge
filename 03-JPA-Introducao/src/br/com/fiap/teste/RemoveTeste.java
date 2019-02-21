@@ -12,7 +12,7 @@ public class RemoveTeste {
 		EntityManager em = fabrica.createEntityManager();
 		
 		Zoologico zoo = em.find(Zoologico.class, 1);
-		em.remove(1);
+		em.remove(zoo);
 		
 		
 		em.getTransaction().begin();

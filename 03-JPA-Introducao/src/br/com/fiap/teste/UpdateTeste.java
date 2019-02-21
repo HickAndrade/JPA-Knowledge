@@ -14,6 +14,8 @@ public class UpdateTeste {
 public static void main(String[] args) {
 	//Criar um objeto zoologico com um id existente no banco 
 	// atualizar os dados no banco de dados 
+	
+	//// pega o java e atualiza o banco
 
 	EntityManagerFactory fabrica = Persistence.createEntityManagerFactory("CLIENTE_ORACLE");
 	EntityManager em = fabrica.createEntityManager();

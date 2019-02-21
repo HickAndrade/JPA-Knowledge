@@ -8,6 +8,10 @@ import br.com.fiap.entity.Zoologico;
 
 public class RefreshTeste {
 
+	// cair na ps 
+	//pega o banco e atualiza o java
+			
+	
 	public static void main(String[] args) {
 		EntityManagerFactory fabrica = Persistence.createEntityManagerFactory("CLIENTE_ORACLE");
 		EntityManager em = fabrica.createEntityManager();
