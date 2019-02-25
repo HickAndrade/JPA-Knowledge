@@ -3,9 +3,12 @@ package br.com.fiap.dao.impl;
 import javax.naming.CommunicationException;
 import javax.persistence.EntityManager;
 
+import org.hibernate.engine.internal.Nullability;
+
 import br.com.fiap.dao.ImovelDAO;
 import br.com.fiap.entity.Imovel;
 import br.com.fiap.excecao.CommitException;
+import br.com.fiap.excecao.SearchNotFoundException;
 
 public class ImovelDAOImpl implements ImovelDAO {
 
@@ -29,10 +32,13 @@ public class ImovelDAOImpl implements ImovelDAO {
 		em.merge(imovel);
 	}
 
-	public void remover(int codigo) {
+	public void remover(int codigo) throws SearchNotFoundException {
 		Imovel imovel = consultar(codigo);
-
-		em.remove(imovel);
+		if (imovel == null) {
+			throw new SearchNotFoundException();
+		} else {
+			em.remove(imovel);
+		}
 
 	}
 
@@ -40,14 +46,13 @@ public class ImovelDAOImpl implements ImovelDAO {
 		try {
 			em.getTransaction().begin();
 			em.getTransaction().commit();
-			
+
 		} catch (Exception e) {
-		e.printStackTrace();
-		em.getTransaction().rollback();
-	
-		throw new CommitException(); // aqui é para avisar que deu ruim
+			e.printStackTrace();
+			em.getTransaction().rollback();
+
+			throw new CommitException();
 		}
 	}
-	
-	
+
 }
