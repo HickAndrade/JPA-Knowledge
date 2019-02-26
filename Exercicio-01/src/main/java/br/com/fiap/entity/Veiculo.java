@@ -7,8 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+
 
 @Entity
 @Table(name = "T_VEICULO")
@@ -27,8 +26,12 @@ public class Veiculo {
 	private String cor;
 
 	@Column(name = "nr_ano")
-	@Temporal(TemporalType.DATE)
 	private int ano;
+	
+
+	public Veiculo() {
+		super();
+	}
 
 	public Veiculo(int codigo, String placa, String cor, int ano) {
 		super();

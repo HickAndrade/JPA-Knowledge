@@ -11,12 +11,12 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>5.2.12.Final</version>
 		</dependency>
-		<dependency>
+		<dependency> 
 			<groupId>oracle</groupId>
 			<artifactId>jdbc-driver</artifactId>
 			<version>12</version>
 			<scope>system</scope>
-			<systemPath>D:/ojdbc8.jar</systemPath>
+			<systemPath>C:/ojdbc8.jar</systemPath>
 		</dependency>
 	</dependencies>
 

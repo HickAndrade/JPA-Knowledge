@@ -1,9 +1,6 @@
 package br.com.fiap.dao.impl;
 
-import javax.naming.CommunicationException;
 import javax.persistence.EntityManager;
-
-import org.hibernate.engine.internal.Nullability;
 
 import br.com.fiap.dao.ImovelDAO;
 import br.com.fiap.entity.Imovel;
