@@ -15,5 +15,4 @@ public interface VeiculoDAO {
 	void deletar(int codigo) throws Error404;
 	
 	void commit() throws CommitException;
-	
 }
