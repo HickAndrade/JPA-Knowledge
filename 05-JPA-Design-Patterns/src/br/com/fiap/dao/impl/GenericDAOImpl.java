@@ -16,7 +16,8 @@ public abstract class GenericDAOImpl<Table, Key> implements GenericDAO<Table, Ke
 	public GenericDAOImpl(EntityManager em) {
 		super();
 		this.em = em;
-		this.clazz = (Class<Table>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
+		this.clazz = (Class<Table>) ((ParameterizedType) 
+				getClass().getGenericSuperclass()).getActualTypeArguments()[0];
 
 	}
 
