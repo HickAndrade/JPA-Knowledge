@@ -1,4 +1,4 @@
-package br.com.hick.generic;
+package br.com.hick.dao.generic;
 
 import br.com.hick.excecao.CommitException;
 import br.com.hick.excecao.NotFoundException;

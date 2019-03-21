@@ -2,8 +2,10 @@ package br.com.hick.entity;
 
 import java.util.Calendar;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -26,7 +28,7 @@ public class Tecnico {
 	@Column(name = "cd_tecnico", nullable = false)
 	private int codigo;
 	
-	@OneToOne(mappedBy="tecnico")
+	@OneToOne(cascade = {CascadeType.PERSIST,CascadeType.MERGE}, fetch = FetchType.LAZY)
 	@JoinColumn(name = "cd_time")
 	private Time time;
 	
@@ -36,6 +38,57 @@ public class Tecnico {
 	@Temporal(TemporalType.DATE)
 @Column(name = "dt_nascimento", nullable = false)
 	private Calendar dataNascimento;
+
+	public Tecnico(int codigo, Time time, String nome, Calendar dataNascimento) {
+		super();
+		this.codigo = codigo;
+		this.time = time;
+		this.nome = nome;
+		this.dataNascimento = dataNascimento;
+	}
+
+	public Tecnico(Time time, String nome, Calendar dataNascimento) {
+		super();
+		this.time = time;
+		this.nome = nome;
+		this.dataNascimento = dataNascimento;
+	}
+
+	public Tecnico() {
+		super();
+	}
+
+	public int getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+
+	public Time getTime() {
+		return time;
+	}
+
+	public void setTime(Time time) {
+		this.time = time;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public Calendar getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(Calendar dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
 	
 	
 	

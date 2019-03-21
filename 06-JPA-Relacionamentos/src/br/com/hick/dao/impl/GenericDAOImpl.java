@@ -4,9 +4,9 @@ import java.lang.reflect.ParameterizedType;
 
 import javax.persistence.EntityManager;
 
+import br.com.hick.dao.generic.GenericDAO;
 import br.com.hick.excecao.CommitException;
 import br.com.hick.excecao.NotFoundException;
-import br.com.hick.generic.GenericDAO;
 
 public abstract class GenericDAOImpl<T,K> implements GenericDAO<T,K> {
 	EntityManager em;

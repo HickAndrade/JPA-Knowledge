@@ -25,4 +25,47 @@ public class Campeonato {
 	@Column(name = "vl_premiacao", nullable = false)
 	private double premiacao;
 
+	public Campeonato(int codigo, String nome, double premiacao) {
+		super();
+		this.codigo = codigo;
+		this.nome = nome;
+		this.premiacao = premiacao;
+	}
+
+	public Campeonato() {
+		super();
+	}
+
+	public Campeonato(String nome, double premiacao) {
+		super();
+		this.nome = nome;
+		this.premiacao = premiacao;
+	}
+
+	public int getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public double getPremiacao() {
+		return premiacao;
+	}
+
+	public void setPremiacao(double premiacao) {
+		this.premiacao = premiacao;
+	}
+
+	
+	
 }

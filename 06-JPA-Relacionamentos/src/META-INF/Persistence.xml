@@ -13,7 +13,7 @@
 			<!-- Update: Alter table/create create: drop/create validate: só valida 
 				as classes, se estão de acordo com as tabelas -->
 
-			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.hbm2ddl.auto" value="create" />
 
 			<property name="hibernate.dialect"
 				value="org.hibernate.dialect.Oracle12cDialect" />
