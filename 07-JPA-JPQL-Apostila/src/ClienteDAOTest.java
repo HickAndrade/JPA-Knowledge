@@ -50,14 +50,19 @@ class ClienteDAOTest {
 		
 	}
 	
+	@Test
 	void BuscarPorEstados() {
 		List<String> estados = new ArrayList<>();
 		List<Cliente> lista = dao.BuscarPorEstados(estados);
-		
+	
 		for (Cliente cliente : lista) {
 			assertTrue(estados.contains(cliente.getEndereco().getCidade().getUf()));
-				 
 		}
-		
+	}
+	
+	@Test
+	void CountByEstado() {
+		long qtd = dao.countByEstado("SP");
+		assertEquals(1,qtd);
 	}
 }
